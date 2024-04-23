@@ -85,8 +85,53 @@ document.getElementById("btnNext").addEventListener("click", function () {
 
     console.log(`Sposto la selezione da ${immagineAttualmenteAttiva} a ${prossimaSlide}`);
 
+})
+
+document.getElementById("btnPrev").addEventListener("click", function () {
+
+    // - fare un ciclo su tutte le slide
+
+    for (i = 0; i < nSlides; i++) {
+
+        const slide = slides[i];
+        console.log(i, slide);
+
+
+        // - ricerchiamo la slide con active
+        if (slide.classList.contains("active")) {
+            // console.log(slide.classList.contains("active"));
+
+            // -- quando la trovo la rimuovo
+            slide.classList.remove("active");
+
+            // -- 1. mi appunto il suo i
+
+            immagineAttualmenteAttiva = i
+            console.log("Ho rimosso la classe active da:", i);
+        }
+
+    }
+
+    // - mi sposta l'active alla i successiva
+    prossimaSlide = immagineAttualmenteAttiva - 1;
+
+    if (prossimaSlide >= nSlides) {
+
+        prossimaSlide = 0
+
+    }
+
+
+
+
+
+    slides[prossimaSlide].classList.add("active");
+
+    console.log(`Sposto la selezione da ${immagineAttualmenteAttiva} a ${prossimaSlide}`);
 
 })
+
+
 
 
 
