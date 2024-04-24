@@ -112,14 +112,17 @@ document.getElementById("btnPrev").addEventListener("click", function () {
 
     }
 
-    // - mi sposta l'active alla i successiva
+    // - mi sposta l'active alla i precedente
     prossimaSlide = immagineAttualmenteAttiva - 1;
 
-    if (prossimaSlide >= nSlides) {
+    if (prossimaSlide >= 0) {
 
-        prossimaSlide = 0
+
+    } else if (prossimaSlide = 4) {
+        prossimaSlide;
 
     }
+
 
 
 
